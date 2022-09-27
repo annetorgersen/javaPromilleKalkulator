@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="689.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="promillekalkulator.controllers.PersonController">
+   <children>
+      <GridPane layoutX="26.0" layoutY="106.0" prefHeight="226.0" prefWidth="568.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="6.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="192.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="518.0" minWidth="10.0" prefWidth="368.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="518.0" minWidth="10.0" prefWidth="56.0" />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="288.0" minHeight="10.0" prefHeight="119.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="288.0" minHeight="10.0" prefHeight="107.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="45.0" prefWidth="138.0" text="              KJØNN">
+               <font>
+                  <Font name="Sinhala MN" size="20.0" />
+               </font>
+            </Label>
+            <Label prefHeight="17.0" prefWidth="119.0" text="              VEKT" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Sinhala MN" size="20.0" />
+               </font>
+            </Label>
+            <Slider fx:id="weight" max="150.0" min="40.0" prefHeight="16.0" prefWidth="340.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <GridPane prefHeight="134.0" prefWidth="390.0" GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" prefWidth="137.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="251.0" />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="106.0" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <RadioButton fx:id="female" mnemonicParsing="false" text="KVINNE">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gender" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="male" mnemonicParsing="false" text="MANN" toggleGroup="$gender" GridPane.columnIndex="1" />
+                  <Text fx:id="genderError" fill="#f50303" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="283.22900390625" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Devanagari MT" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
+            <ImageView fitHeight="24.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@bilder/pngegg%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@bilder/pngegg%20(2).png" />
+               </image>
+            </ImageView> 
+         </children>
+      </GridPane>
+      <Button fx:id="next" layoutX="481.0" layoutY="336.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="90.0" style="-fx-background-radius: 20;" text="Neste side">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Label layoutX="62.0" layoutY="68.0" prefHeight="25.0" prefWidth="160.0" text="  BRUKERNAVN">
+         <font>
+            <Font name="Sinhala MN" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="name" layoutX="233.0" layoutY="68.0" prefHeight="25.0" prefWidth="201.0" promptText="Brukernavn" style="-fx-background-color: white;" />
+      <ImageView fx:id="genderImage" fitHeight="25.0" fitWidth="23.0" layoutX="32.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@bilder/pngegg.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="invalidUserName" fill="#fc0101" layoutX="233.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="201.0">
+         <font>
+            <Font name="Devanagari Sangam MN" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="userNameTaken" fill="#f80202" layoutX="233.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="201.0">
+         <font>
+            <Font name="Devanagari Sangam MN" size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
